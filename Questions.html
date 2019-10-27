@@ -8,14 +8,30 @@
         <script src="js/uikit/uikit.min.js"></script>
         <script src="js/uikit/uikit-icons.min.js"></script>
     </head>
-    <body>
+    <body bgcolor=#000000>
+        <br>
+        <br>
 	<div class="uk-section uk-background-secondary uk-light">
-		<div class="uk-container uk-container-expand uk-text-center " style=" padding: 0%; border: red;">
+        <div class="uk-container uk-container-expand uk-text-center " style=" padding: 0%; border: red;">
+            <br>
 			<h3 style="margin-top:-4%"> All the best for the Quiz </h3>
 			<h5 style="margin-top:1%; border: 1px solid red; padding:2.5%;"> There will be 10 questions, Each question carries 1 marks. The answers given by the user will evaluated to 10 marks </h5>
-		</div>
-		
-
+        </div>
+        <br>
+        <div class="uk-container uk-container-expand" style="background-color: rgb(62, 65, 68)">
+       
+            <form action="check.php" method="post">
+             
+                <div class="uk-card-secondary">
+                    <p> Question 1 </p>
+                    <input type="radio" name="1"> Answer 1 </input> <br>
+                    <input type="radio" name="1"> Answer 2 </input> <br>
+                    <input type="radio" name="1"> Answer 3 </input> <br>
+                    <input type="radio" name="1"> Answer 4 </input> <br>
+                </div>
+            </form>
+     
+        </div>
 	</div>	
     </body>
 </html>
