@@ -9,6 +9,9 @@
                         <h3>Notice</h3>
                         <p>Connection to the Database ONLINEQUIZ is not established :(</p>
                      </div>
+                     <script>
+                        window.stop();
+                    </script>
         <?php        
                 }
             }
@@ -18,8 +21,11 @@
                 <div uk-alert>
                         <a class="uk-alert-close" uk-close></a>
                         <h3>Notice</h3>
-                        <p>There maybe a problem in your xampp (or) The database called ONLINEQUIZ may not exist in your localhost \n for more information please check line 14 or contact Manoj!</p>
+                        <p>There maybe a problem in your xampp (or) The database called ONLINEQUIZ may not exist in your localhost \n for more information please check line 24 or contact Manoj!</p>
                 </div>
+                <script>
+                        window.stop();
+                </script>
         <?php
             }
         ?>
@@ -32,6 +38,13 @@
         <link rel="stylesheet" href="css/uikit/css/uikit.min.css" />
         <script src="js/uikit/uikit.min.js"></script>
         <script src="js/uikit/uikit-icons.min.js"></script>
+        <style>
+            #answer
+            #question
+            {
+
+            }
+        </style>
     </head>
     <body bgcolor=#0000>
 	    <div class="uk-section uk-background-secondary uk-light">
@@ -42,38 +55,44 @@
             </div>
             <br>
             <div class="uk-container uk-container-expand" style="background-color: rgb(62, 65, 68)">
-       
-            <form action="check.php" method="post">
-			
-				<?php     
-                     $i = 1;
-                     for( $i ; $i <= 1 ;$i++)
-                     {
-                        $ansid = $i;
-                        $sql1 = "SELECT * FROM QUESTIONS WHERE QID = $i ";
-                        $sql2 = "SELECT * FROM ANSWERS WHERE ANS_ID = $i ";
-                        $result1 = mysqli_query($con, $sql1);
-                        $result2 = mysqli_query($con, $sql2);
-                        while( $rows1 = mysqli_fetch_array($result1) )  
-                        {		 
-                ?>	
-                            <div class="uk-card-secondary">
-                            <p class> <?php echo $i ."  :  ". $rows1['QUESTIONS']; ?> </p>
-                            
-                <?php        
-                            while ( $rows2 = mysqli_fetch_array($result2) )
+                <form action="check.php" method="post">
+                   
+			      <!--  <div class="uk-position-large uk-position-center"> -->
+				        <?php     
+                            $i = 1;
+                            for( $i ; $i <= 3 ;$i++)
                             {
-                ?>           
-                                 <input type="radio" name="1"> <?php echo $rows2['ANSWERS']; ?> <br> 
-                <?php
-                            }
-                        }
-                    }   
-                ?>	
-                </div>
-            </form>
-     
-        </div>
-	</div>	
-    </body>
+                                $ansid = $i;
+                                $sql1 = "SELECT * FROM QUESTIONS WHERE QID = $i ";
+                                $sql2 = "SELECT * FROM ANSWERS WHERE ANS_ID = $i ";
+                                $result1 = mysqli_query($con, $sql1);
+                                $result2 = mysqli_query($con, $sql2);
+                                while( $rows1 = mysqli_fetch_array($result1) )  
+                                {		 
+                        ?>	
+                                <br>
+                                <div class="uk-card uk-card-secondary uk-card-body uk-align-center uk-width-xxlarge">
+                                    <h3 class="uk-card-title uk-align-left@s uk-align-left@m uk-align-left@l uk-align-left@x1 uk-margin-remove-adjacent" id="question"><?php echo $i." : ".$rows1['QUESTIONS']; ?></h3> 
+                                    <br> 
+                                    <br>
+                                    <br>
+                                    <?php        
+                                        while ( $rows2 = mysqli_fetch_array($result2) )
+                                        {
+                                    ?>           
+                                            <input class="uk-margin-medium-top uk-margin-remove-left" id="answer" type="radio" name="quizcheck[]" value="<?php echo $rows2['AID'] ?>"> <?php echo $rows2['ANSWERS']; ?> <br> 
+                                    <?php
+                                        }
+                                    ?>
+                                   
+                                    <?php
+                                }
+                            }   
+                                    ?>
+                                </div>	
+                    </form>    
+        <!--    </div>   -->
+    </div>
+</div>	
+</body>
 </html>
