@@ -71,28 +71,34 @@
                                 {		 
                         ?>	
                                 <br>
-                                <div class="uk-card uk-card-secondary uk-card-body uk-align-center uk-width-xxlarge">
-                                    <h3 class="uk-card-title uk-align-left@s uk-align-left@m uk-align-left@l uk-align-left@x1 uk-margin-remove-adjacent" id="question"><?php echo $i." : ".$rows1['QUESTIONS']; ?></h3> 
-                                    <br> 
-                                    <br>
-                                    <br>
-                                    <?php        
-                                        while ( $rows2 = mysqli_fetch_array($result2) )
-                                        {
-                                    ?>           
-                                            <input class="uk-margin-medium-top uk-margin-remove-left" id="answer" type="radio" name="quizcheck[]" value="<?php echo $rows2['AID'] ?>"> <?php echo $rows2['ANSWERS']; ?> <br> 
-                                    <?php
-                                        }
-                                    ?>
-                                   
+                                <div class="uk-card uk-card-secondary uk-card-body uk-align-center uk-width-xxlarge uk-margin-remove-bottom uk-margin-remove-top">
+                                    <h3 class="uk-card-title uk-align-left@s uk-align-left@m uk-align-left@l uk-align-left@x1 uk-margin-remove-adjacent uk-padding-remove"  id="question"><?php echo $i." : ".$rows1['QUESTIONS']; ?></h3> 
+                                     <br><br>
+                                    <div class="uk-card uk-card-secondary uk-card-body uk-align-center uk-width-xxlarge uk-padding-remove">
+                                        <?php        
+                                            while ( $rows2 = mysqli_fetch_array($result2) )
+                                            {
+                                        ?>           
+                                                <input class="uk-margin-medium-top uk-margin-slarge-left" id="answer" type="radio" name="quizcheck[]" value="<?php echo $rows2['AID'] ?>"> <?php echo $rows2['ANSWERS']; ?> <br> 
+                                        <?php
+                                            }
+                                        ?>
+                                        
+                                    </div>
+                                </div>
                                     <?php
                                 }
                             }   
                                     ?>
-                                </div>	
+                        <input type = "SUBMIT" class="uk-button uk-button-primary uk-button-large uk-align-center">
+                               <!-- </div>	-->
                     </form>    
         <!--    </div>   -->
     </div>
 </div>	
 </body>
 </html>
+
+
+
+
