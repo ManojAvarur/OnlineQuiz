@@ -8,106 +8,78 @@
         <script src="js/uikit/uikit.min.js"></script>
         <script src="js/uikit/uikit-icons.min.js"></script>
     </head>
-	<body></body>
-        <div class="uk-section uk-section-large uk-padding-remove" id="home">
-                <div class="uk-position-realative">
-                    <img data-src="img/back.jpg" width="auto" height="" uk-height-viewport="offset-bottom: 20" alt="" uk-img>
-                    <div class="uk-cover-container uk-position-center">
-                            <button class="uk-button uk-button-primary uk-button-large uk-align-center"  style="border-radius:30px;" onclick="location.href='StartingPageNew.html'"> Enter To Quiz Portal </button>
-                    </div>
-                 </div>
-         
-                <div class="uk-position-top ">
-                        <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-margin; cls-inactive: uk-navbar-transparent; top: 200; uk-margin" style="padding: 1px; ;">
-        
-                                <nav class="uk-navbar-container uk-navbar-transparent uk-animation-slide-top uk-margin" style="border-radius:30px;" uk-navbar>
-                                    <div class="uk-navbar-center">
-                                        <ul class="uk-nav uk-nav-default uk-navbar-nav" uk-scrollspy-nav="closest:li; cls:uk-active; scroll: true ; overflow:true;">
-                                            <li>
-                                                <a class="uk-button-text uk-text-primary" style="font-style: italic;" href="#home">Home</a>
-                                            </li>
-                                            <li>
-                                                <a class="uk-button-text" href="#about" style="font-style: italic;" >About Us</a>
-                                            </li>                                       
-                                            <li>
-                                                <a class="uk-button-text" href="#contact" style="font-style: italic;">Contact</a>
-                                            </li>
-            
-                                        </ul>
-                                    </div>
-                                </nav>
-                        </div>
+<body>
+    <nav class="uk-navbar-container uk-dark uk-background-secondary uk-position-top uk-text-center uk-margin uk-navbar">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-item uk-logo" href="StartingPage.html">
+                <h4 class="uk-text-muted">Online<br>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;Quiz</h3>
+            </a>
+        </div>
+            <div class="uk-navbar-right">
+                    <ul class="uk-navbar-nav">
+                            <li>
+                                <a href="#aboutonlinequiz" uk-scroll>
+                                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: user"></span>
+                                    About Online Quiz
+                                </a>
+                            </li>
+                        </ul>
             </div>
-            <div class="uk-section uk-section-large uk-padding-remove" id="about" style="background-color: black;">
+          
+        
+    </nav>
+
+
+    <div class="uk-height-large uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding" data-src="img/lback.jpg" uk-img uk-height-viewport>
+       <br>
+       <br>
+        <h1 class="uk-margin-large-left uk-margin-large-right uk-text-center">Anything Realted to Quiz Type Here AND Most Importantly "Don't Forget Type Here"
             <br>
-            <br>
-                <p class="uk-text-primary uk-text-center uk-text-bolder" style="font-size: 50px;"><u>About</u> <u>Us</u></p> <br>
-                <div class="uk-text-center">
-                  <span uk-icon="icon:  info; ratio: 4.5 " style="color:#ffff;"> </span> <br>
-                </div> 
-                <p class="uk-text-muted uk-text-justify uk-text-bolder uk-align-center uk-width-1-2" style="font-size: 20px; font-family: 'Times New Roman', Times, serif">
-                        
-                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature 
-                    from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, 
-                    looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the 
-                    word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 
-                    "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on 
-                    the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", 
-                    comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those 
-                    interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact
-                     original form, accompanied by English versions from the 1914 translation by H. Rackham.
-                </p>
-            <br>
-            <br>
-             </div>
-             <div class="uk-section uk-section-large uk-padding-remove" id="contact" style="background-color: #1E87F0">
-                <br>
-                    <p class="uk-text-center uk-text-bolder " style="font-size: 50px; color: hsl(0, 0%, 0%);"><u>Contact</u></p>
-                    <br>
-                <br>
-                <div class="uk-container uk-container-large">
+            <button class="uk-button uk-button-default uk-button-large uk-align-center">Click Here To Start The Quiz</button>
+        </h1>
+      </div>
+    
 
-                        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+      <div class="uk-section uk-margin-remove-top" id="aboutonlinequiz" style="background-color: black;">
+           <div class="uk-container uk-align-center" id="bodyid">
+            <div class="uk-child-width-1-3@m" uk-grid
+                 uk-scrollspy="cls: uk-animation-slide-bottom; target: .uk-card; delay: 300; repeat: true">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title"><u><b>Quiz</b></u></h3>
+                        <p>A quiz is a form of game or mind sport, in which the players (as individuals
+                            or in teams) attempt to answer questions correctly. It is a game to test your
+                            knowledge about a certain subject. In some countries, a quiz is also a brief assessment
+                            used in education and similar fields to measure growth in knowledge.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body" uk-scrollspy-class="uk-animation-slide-top">
+                        <h3 class="uk-card-title"><u><b>Online</b></u> <u><b> Quiz</b></u></h3>
+                        <p>Online quizzes are a popular form of entertainment for web surfers. Online quizzes
+                            are generally free to play and for entertainment purposes only though some online quiz
+                            websites offer prizes. Websites feature online quizzes on many subjects. One popular
+                            type of online quiz is a personality quiz or relationship quiz.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title"><u><b>Online</b></u> <u><b>Certificate</b></u></h3>
+                        <p>Certificate programs are available in a variety of disciplines, from business and
+                            education to the arts and sciences. Online certificate programs also might benefit
+                            those who want to undergo career training in a field that doesn't necessarily require
+                            a degree. Students who want to earn certificates</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+      </div>
 
-                            <div>
-                                <span uk-icon="icon: mail" style="color: hsl(0, 0%, 0%);"> </span>
-                                <p class="" style="color: hsl(0, 0%, 0%);">someone@gmail.com</p>
-                            </div>
+      <div class="uk-section uk-text-center" style="background-color: #1E87F0">
+            <a href="#" uk-totop uk-scroll style="color: hsl(0, 0%, 0%);">
+            <p style="color: hsl(0, 0%, 0%);">Top</p> </a>
+      </div>
 
-                            <div>
-                                <span uk-icon="icon:  location" style="color: hsl(0, 0%, 0%);"> </span>  
-                                <p class=" uk-margin-remove-bottom uk-text-center" style="color: hsl(0, 0%, 0%);">  JSSATE-B Campus, </p> 
-                                <p class="uk-margin-remove-top uk-margin-remove-bottom uk-text-center" style="color: hsl(0, 0%, 0%);"> Dr.Vishnuvardhan Rd, </p> 
-                                 <p class="uk-margin-remove-top uk-margin-remove-bottom uk-text-center" style="color: hsl(0, 0%, 0%);">   Srinivapura Post, </p>
-                                <p class="uk-margin-remove-top uk-margin-remove-bottom uk-text-center" style="color: hsl(0, 0%, 0%);">   Bengaluru, Karnataka : 560060 </p>  
-                            </div>
-
-                            <div>
-                                <span uk-icon="icon:  receiver" style="color: hsl(0, 0%, 0%);"> </span>  
-                                <p class="uk-text-center" style="color: hsl(0, 0%, 0%);">+91-9986832195</p>
-                                <p class="uk-margin-remove-top uk-text-center" style="color: hsl(0, 0%, 0%);">+91-9538163398</p>
-                            </div>
-
-                            <div>
-                                <span uk-icon="icon:  facebook" style="color: hsl(0, 0%, 0%);"> </span>  
-                                <p class="" style="color: hsl(0, 0%, 0%);">someone@gmail.com</p>
-                            </div>
-
-                            <div>
-                                <span uk-icon="icon:  instagram" style="color: hsl(0, 0%, 0%);"> </span>                              
-                                <p class=" uk-text-center" style="color: hsl(0, 0%, 0%);">call_me_onlineQuiz</p>
-                            </div>
-
-                            <div>
-                                <span uk-icon="icon:  whatsapp" style="color: hsl(0, 0%, 0%);"> </span>  
-                                <p class=" uk-text-center" style="color: hsl(0, 0%, 0%);">+91-9986832195</p>
-                                <p class="uk-margin-remove-top uk-text-center" style="color: hsl(0, 0%, 0%);">+91-9538163398</p>
-                            </div>
-
-                        </div>
-
-                    <br>
-                    <br>
-                </div>                    
-	</body>
+</body>
 </html>
