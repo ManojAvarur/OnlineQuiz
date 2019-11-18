@@ -1,7 +1,7 @@
 <?php
             if($con = mysqli_connect('localhost','root'))
             {    
-                if(!mysqli_select_db($con,'ONLINEQUIZ'))
+                if(!mysqli_select_db($con,'ONLINE_QUIZ'))
                 { 
         ?> 
                      <div uk-alert>
@@ -60,11 +60,11 @@
 			      <!--  <div class="uk-position-large uk-position-center"> -->
 				        <?php     
                             $i = 1;
-                            for( $i ; $i <= 3 ;$i++)
+                            for( $i ; $i <= 10 ;$i++)
                             {
                                 $ansid = $i;
-                                $sql1 = "SELECT * FROM QUESTIONS WHERE QID = $i ";
-                                $sql2 = "SELECT * FROM ANSWERS WHERE ANS_ID = $i ";
+                                $sql1 = "SELECT * FROM QUESTIONS WHERE Q_ID = $i ";
+                                $sql2 = "SELECT * FROM ANSWERS WHERE Q_ID = $i ";
                                 $result1 = mysqli_query($con, $sql1);
                                 $result2 = mysqli_query($con, $sql2);
                                 while( $rows1 = mysqli_fetch_array($result1) )  
@@ -72,14 +72,16 @@
                         ?>	
                                 <br>
                                 <div class="uk-card uk-card-secondary uk-card-body uk-align-center uk-width-xxlarge uk-margin-remove-bottom uk-margin-remove-top">
-                                    <h3 class="uk-card-title uk-align-left@s uk-align-left@m uk-align-left@l uk-align-left@x1 uk-margin-remove-adjacent uk-padding-remove"  id="question"><?php echo $i." : ".$rows1['QUESTIONS']; ?></h3> 
-                                     <br><br>
+                                    <h3 class="uk-card-title uk-align-left@s uk-align-left@m uk-align-left@l uk-align-left@x1 uk-margin-remove-adjacent uk-padding-remove"  id="question"><?php echo $i." : ".$rows1['QUESTION']; ?></h3> 
+                                     <br><br><br>
                                     <div class="uk-card uk-card-secondary uk-card-body uk-align-center uk-width-xxlarge uk-padding-remove">
                                         <?php        
                                             while ( $rows2 = mysqli_fetch_array($result2) )
                                             {
-                                        ?>           
-                                                <input class="uk-margin-medium-top uk-margin-slarge-left" id="answer" type="radio" name="quizcheck[]" value="<?php echo $rows2['AID'] ?>"> <?php echo $rows2['ANSWERS']; ?> <br> 
+                                        ?>         
+                                               
+                                                <input class="uk-margin-medium-top uk-margin-slarge-left" id="answer" type="radio" name="quizcheck[<?php echo $rows2['Q_ID'] ?>]" value="<?php echo $rows2['ANS_ID'] ?>"> <?php echo $rows2['ANSWERS']; ?> <br> 
+                                               
                                         <?php
                                             }
                                         ?>
@@ -95,6 +97,11 @@
                     </form>    
         <!--    </div>   -->
     </div>
+
+    <p class="uk-text-center uk-text-muted">
+    © Online-Quiz 2019-2020 <br>
+    ® Dhruva And Manoj
+    </p>
 </div>	
 </body>
 </html>
