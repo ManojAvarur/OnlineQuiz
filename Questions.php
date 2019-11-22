@@ -58,9 +58,15 @@
                 <form action="check.php" method="post">
                    
 			      <!--  <div class="uk-position-large uk-position-center"> -->
-				        <?php     
+                        <?php    
+                            $sql = "SELECT COUNT(Q_ID) AS CNT FROM QUESTIONS"; 
+                            $result = mysqli_query($con, $sql);
+                            while( $rows = mysqli_fetch_array($result) )  
+                            {
+                               $var = $rows['CNT'];
+                            }
                             $i = 1;
-                            for( $i ; $i <= 10 ;$i++)
+                            for( $i ; $i <= $var ;$i++)
                             {
                                 $ansid = $i;
                                 $sql1 = "SELECT * FROM QUESTIONS WHERE Q_ID = $i ";
